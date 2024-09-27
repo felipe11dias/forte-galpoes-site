@@ -97,7 +97,7 @@
 			<div class="row">
 				<div class="col-12 col-lg-12 mt-4">
 					<div class="p-4 p-sm-5 pb-sm-4 shadow rounded">		
-						<form class="row g-4 needs-validation" id="myForm" novalidate>
+						<!-- <form class="row g-4 needs-validation" id="myForm" novalidate>
 							<div class="col-md-6">
 								<label for="nameForm" class="form-label">Nome completo</label>
 								<input type="text" class="form-control" name="nameForm" id="nameForm" required>
@@ -154,10 +154,57 @@
 								</button>
 							</div>
 
-							<!-- Alert message  -->
+							 Alert message 
 							<div class="col-12 text-center" id="yourMessageIsSent"></div>
 
-						</form>
+						</form> -->
+
+
+						<form class="row g-4 needs-validation" id="myForm"
+							method="GET"
+							action="mailto:mamaucar@hotmail.com"
+							enctype="text/plain"
+							novalidate>
+							<h2 class="h1 col-12 text-center">Contate-nos</h2>
+
+							<div class="col-md-6">
+									<label for="nameForm" class="form-label">Nome completo</label>
+									<input type="text" class="form-control" name="nameForm" id="nameForm" required aria-required="true">
+									<div class="invalid-feedback">Por favor, preencha isso!</div>
+							</div>
+
+							<div class="col-md-6">
+									<label for="emailForm" class="form-label">Email</label>
+									<input type="email" class="form-control" name="emailForm" id="emailForm" required aria-required="true">
+									<div class="invalid-feedback">Por favor, preencha isso!</div>
+							</div>
+
+							<div class="col-md-6">
+									<label for="subject" class="form-label">Assunto</label>
+									<input type="text" class="form-control" name="subject" id="subject" required aria-required="true">
+									<div class="invalid-feedback">Por favor, preencha isso!</div>
+							</div>
+
+							<div class="mb-3">
+									<label for="body" class="form-label">Sua mensagem</label>
+									<textarea class="form-control" name="body" id="body" rows="3" required aria-required="true"></textarea>
+									<div class="invalid-feedback">Por favor, preencha isso!</div>
+							</div>
+
+							<div class="col-12">
+									<div class="form-check">
+											<input class="form-check-input" type="checkbox" id="gridCheck" required>
+											<label class="form-check-label" for="gridCheck">Eu aceito os termos &amp; condições e a política de Privacidade</label>
+											<div class="invalid-feedback">Por favor, preencha isso!</div>
+									</div>
+							</div>
+
+							<div class="col-12 text-center">
+									<button type="submit" class="btn btn-primary btn-lg w-100 w-lg-60" id="sendMessage">Enviar mensagem</button>
+							</div>
+
+							<div class="col-12 text-center" id="yourMessageIsSent"></div>
+					</form>
 					</div>
 				</div>
 
