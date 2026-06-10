@@ -1,0 +1,6 @@
+User-agent: *
+Allow: /
+Disallow: /assets/scss/
+Disallow: /assets/php/
+
+Sitemap: https://fortegalpoes.com/sitemap.xml
