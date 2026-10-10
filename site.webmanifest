@@ -1,0 +1,17 @@
+{
+	"name": "Forte Galpões — Consultoria Imobiliária",
+	"short_name": "Forte Galpões",
+	"description": "Consultoria imobiliária especializada em galpões industriais, empresariais e terrenos.",
+	"lang": "pt-BR",
+	"start_url": "/",
+	"display": "standalone",
+	"theme_color": "#101d2d",
+	"background_color": "#f0f2f5",
+	"icons": [
+		{
+			"src": "/assets/logo/fav-icon.png",
+			"sizes": "192x192",
+			"type": "image/png"
+		}
+	]
+}

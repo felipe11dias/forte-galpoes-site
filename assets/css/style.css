@@ -1,12 +1,140 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+/* Fonte Roboto carregada via <link> no <head> das páginas (com preconnect) */
 
 body, html {
   font-family: 'Roboto', sans-serif;
 }
 
+/* Acessibilidade: respeita usuários com animações desativadas no sistema */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
 .btn-back-to-top {
-  width: 2.5rem; 
+  width: 2.5rem;
   height: 2.5rem;
+  bottom: 5.5rem !important; /* acima do botão flutuante de WhatsApp */
+}
+
+/* ---------------------------------------------------------------- */
+/* Modernização visual — interações e animações                      */
+/* ---------------------------------------------------------------- */
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* Navbar com efeito vidro (glassmorphism) ao rolar a página */
+.navbar-glass {
+  position: fixed !important;
+  top: 0;
+  margin-top: 0 !important;
+  background: rgba(16, 29, 45, 0.8) !important;
+  -webkit-backdrop-filter: blur(12px);
+  backdrop-filter: blur(12px);
+  box-shadow: 0 0.25rem 1rem rgba(16, 29, 45, 0.35);
+  animation: navbarSlideDown 0.35s ease;
+}
+
+.navbar-brand img {
+  transition: height 0.3s ease;
+}
+
+.navbar-glass .navbar-brand img {
+  height: 60px;
+}
+
+@keyframes navbarSlideDown {
+  from { transform: translateY(-100%); }
+  to   { transform: translateY(0); }
+}
+
+/* Gradiente animado sobre a imagem do hero */
+.hero-overlay {
+  background: linear-gradient(135deg, rgba(16, 29, 45, 0.85) 0%, rgba(16, 29, 45, 0.55) 45%, rgba(252, 158, 0, 0.30) 100%) !important;
+  background-size: 200% 200% !important;
+  animation: heroGradient 14s ease infinite;
+}
+
+@keyframes heroGradient {
+  0%   { background-position: 0% 50%; }
+  50%  { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* Zoom lento (efeito Ken Burns) na imagem de fundo do hero */
+.hero-bg-zoom {
+  animation: heroZoom 24s ease-in-out infinite alternate;
+}
+
+@keyframes heroZoom {
+  from { transform: scale(1); }
+  to   { transform: scale(1.08); }
+}
+
+/* Elevação suave em cards e blocos de destaque */
+.hover-lift {
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
+}
+
+.hover-lift:hover {
+  transform: translateY(-0.5rem);
+  box-shadow: 0 1rem 2rem rgba(16, 29, 45, 0.25);
+}
+
+/* Micro-interação nos botões */
+.btn {
+  transition: transform 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease, color 0.2s ease;
+}
+
+.btn:hover {
+  transform: translateY(-2px);
+}
+
+/* Ícones sociais com leve crescimento no hover */
+.social {
+  transition: transform 0.2s ease;
+}
+
+.social:hover {
+  transform: scale(1.15);
+}
+
+/* Botão flutuante de WhatsApp com pulso */
+.btn-whatsapp-float {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 1040;
+  width: 3.5rem;
+  height: 3.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background-color: #25d366;
+  color: #fff;
+  box-shadow: 0 0.5rem 1rem rgba(16, 29, 45, 0.3);
+  animation: whatsappPulse 2.5s ease infinite;
+}
+
+.btn-whatsapp-float:hover {
+  color: #fff;
+  background-color: #1ebe5d;
+  transform: scale(1.1);
+  animation-play-state: paused;
+}
+
+@keyframes whatsappPulse {
+  0%   { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.55); }
+  70%  { box-shadow: 0 0 0 16px rgba(37, 211, 102, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); }
 }
 
 .main-header {

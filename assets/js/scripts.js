@@ -1,18 +1,17 @@
-window.onload = function() {
-    var audio = document.getElementById("myAudio");
-    if(audio) {
-        audio.volume = 0.2;
-    }
-}
-
 // button back to top
 //Get the button
 let btnBackToTop = document.querySelector(".btn-back-to-top");
+
+// navbar with glass effect when scrolling
+let mainNavbar = document.querySelector(".navbar");
 
 // When the user scrolls down 20px from the top of the document, show the button
 window.onscroll = function () {
     if (btnBackToTop !== null) {
         scrollbtnBackToTopFun();
+    }
+    if (mainNavbar !== null) {
+        mainNavbar.classList.toggle("navbar-glass", window.scrollY > 80);
     }
 };
 
@@ -75,20 +74,19 @@ if ( videoBtn = document.querySelectorAll('.video-btn-modal')) {
 // loader-wrapper 
 
 window.addEventListener("load", function(event){
-    var loaderWrapper;
-    if ( loaderWrapper = document.querySelector('.loader-wrapper') ) {
+    var loaderWrapper = document.querySelector('.loader-wrapper');
+    if (loaderWrapper) {
         loaderWrapper.style.display = "none";
-        // initialize the AOS
-        if (typeof AOS === 'object') {
-            AOS.init();
-        }
-    } else {
-        // initialize the AOS
-        if (typeof AOS === 'object') {
-            AOS.init();
-        }
     }
-
+    // initialize the AOS
+    if (typeof AOS === 'object') {
+        AOS.init({
+            disable: window.matchMedia('(prefers-reduced-motion: reduce)').matches,
+            duration: 700,
+            easing: 'ease-out-cubic',
+            once: true
+        });
+    }
 })
 
 // Typed
